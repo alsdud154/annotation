@@ -14,10 +14,11 @@ public class AnnotationController {
     private final AnnotationService annotationService;
 
     @PostMapping("/annotation")
-    public String annotation(@RequestBody Person person){
+    public Person annotation(@RequestBody Person person){
 
+        System.out.println("person = " + person);
         annotationService.annotation(person);
 
-        return "success";
+        return person;
     }
 }
